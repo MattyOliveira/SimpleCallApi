@@ -1,7 +1,7 @@
-package com.example.simplecallnetwork.base
+package com.example.callapi.base
 
-import com.example.simplecallnetwork.ResultApi
-import com.example.simplecallnetwork.utils.ErrorUtils
+import com.example.callapi.ResultApi
+import com.example.callapi.utils.ErrorUtils
 import retrofit2.Response
 import java.lang.Exception
 

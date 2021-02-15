@@ -1,6 +1,6 @@
-package com.example.simplecallnetwork
+package com.example.callapi
 
-import com.example.simplecallnetwork.utils.DateUtils.DATE_FORMAT
+import com.example.callapi.utils.DateUtils.DATE_FORMAT
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
 import com.squareup.moshi.Moshi
