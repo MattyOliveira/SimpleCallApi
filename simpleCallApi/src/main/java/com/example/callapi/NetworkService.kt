@@ -20,23 +20,26 @@ object NetworkService {
         .baseUrl(baseUrl)
         .client(okHttpClient)
         .addConverterFactory(
-            if (moshiConverter) MoshiConverterFactory.create(moshiFactory()) else GsonConverterFactory.create(
-                getDefaultGson()
-            ))
+            if (moshiConverter)
+                MoshiConverterFactory.create(moshiFactory())
+            else
+                GsonConverterFactory.create(getDefaultGson())
+        )
         .build()
         .create(T::class.java)
 
     inline fun <reified T> createClientByServiceRx(
-        baseUrl: String,
+        baseUrl: String = "",
         okHttpClient: OkHttpClient = OkHttpClient.Builder().build(),
         moshiConverter: Boolean = false
     ): T = Retrofit.Builder()
         .baseUrl(baseUrl)
         .client(okHttpClient)
         .addConverterFactory(
-            if (moshiConverter) MoshiConverterFactory.create(moshiFactory()) else GsonConverterFactory.create(
-                getDefaultGson()
-            ))
+            if (moshiConverter)
+                MoshiConverterFactory.create(moshiFactory())
+            else
+                GsonConverterFactory.create(getDefaultGson()))
         .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
         .build()
         .create(T::class.java)
@@ -48,9 +51,8 @@ object NetworkService {
             .build()
     }
 
-    fun getDefaultGson(): Gson? {
+    fun getDefaultGson(): Gson {
         return GsonBuilder()
             .setDateFormat(DATE_FORMAT).create()
     }
-
 }
