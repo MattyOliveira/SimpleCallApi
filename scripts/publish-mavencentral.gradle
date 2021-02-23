@@ -58,7 +58,7 @@ publishing {
             pom {
                 name = PUBLISH_ARTIFACT_ID
                 description = 'This lib is a simple call APIs'
-                url = 'https://github.com/MattyRodrigues/SimpleCallApi'
+                url = 'https://github.com/MattyOliveira/SimpleCallApi'
                 licenses {
                     license {
                         name = 'Apache License Version 2.0'
@@ -73,9 +73,9 @@ publishing {
                     }
                 }
                 scm {
-                    connection = 'scm:git@github.com:MattyRodrigues/SimpleCallApi.git'
-                    developerConnection = 'scm:git@github.com:MattyRodrigues/SimpleCallApi.git'
-                    url = 'https://github.com/MattyRodrigues/SimpleCallApi'
+                    connection = 'scm:git@github.com:MattyOliveira/SimpleCallApi.git'
+                    developerConnection = 'scm:git@github.com:MattyOliveira/SimpleCallApi.git'
+                    url = 'https://github.com/MattyOliveira/SimpleCallApi'
                 }
                 withXml {
                     def dependenciesNode = asNode().appendNode('dependencies')
