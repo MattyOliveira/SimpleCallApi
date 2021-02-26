@@ -3,7 +3,7 @@ package com.example.callapi.base
 import androidx.lifecycle.ViewModel
 import com.example.callapi.ResultApi
 
-open class BaseViewModel: ViewModel() {
+open class BaseViewModel : ViewModel() {
     suspend fun <T> T.safeCall(
         call: suspend () -> ResultApi,
         onSuccess: (Any?) -> Unit,

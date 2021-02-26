@@ -9,7 +9,7 @@ import retrofit2.Response
 import retrofit2.Retrofit
 import java.io.IOException
 
-object ErrorUtils {
+internal object ErrorUtils {
     fun parserError(response: Response<*>): ApiError? {
         val converter: Converter<ResponseBody, ApiError> =
             createClientByService<Retrofit>().responseBodyConverter(ApiError::class.java, arrayOfNulls<Annotation>(0))
