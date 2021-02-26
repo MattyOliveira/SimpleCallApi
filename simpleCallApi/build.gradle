@@ -39,7 +39,7 @@ dependencies {
 
 ext {
     PUBLISH_GROUP_ID = 'com.github.mattyoliveira'
-    PUBLISH_VERSION = '0.0.3'
+    PUBLISH_VERSION = '0.0.5'
     PUBLISH_ARTIFACT_ID = 'simple-call-api'
 }
 
