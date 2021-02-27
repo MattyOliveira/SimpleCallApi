@@ -41,3 +41,4 @@ allprojects {
         enabled = false
     }
 }
+apply plugin: 'io.codearte.nexus-staging'
