@@ -5,7 +5,7 @@ import com.example.callapi.utils.ErrorUtils
 import retrofit2.Response
 import java.lang.Exception
 
-open class BaseRepository {
+open class SimpleRepository {
 
     suspend fun <T> safeCallApi(call: suspend () -> Response<T>) = safeResultApi(call)
 
