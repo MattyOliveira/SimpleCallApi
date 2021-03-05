@@ -6,7 +6,7 @@ SimpleCallApi is a library to assist with API calls. The idea is that it would b
 ### Version
 ##### Gradle
 ```
-implementation 'com.github.mattyoliveira:simple-call-api:1.0.1'
+implementation 'com.github.mattyoliveira:simple-call-api:1.1.1'
 ```
 
 ##### Maven
@@ -14,7 +14,7 @@ implementation 'com.github.mattyoliveira:simple-call-api:1.0.1'
 <dependency>
   <groupId>com.github.mattyoliveira</groupId>
   <artifactId>simple-call-api</artifactId>
-  <version>1.0.1</version>
+  <version>1.1.1</version>
   <type>aar</type>
 </dependency>
 ```
