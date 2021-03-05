@@ -2,6 +2,15 @@
 
 SimpleCallApi is a library to assist with API calls. The idea is that it would be as simple as possible and could help from the beginner to the most senior developer. SimpleCallApi supports Coroutines and RxJava
 
+![GitHub stars](https://img.shields.io/github/stars/MattyOliveira/SimpleCallApi?style=social&label=Star&maxAge=2592000)
+![GitHub watchers](https://img.shields.io/github/watchers/MattyOliveira/SimpleCallApi?style=social&label=Watch&maxAge=2592000)
+![GitHub followers](https://img.shields.io/github/followers/MattyOliveira.svg?style=social&label=Follow&maxAge=2592000)
+![GitHub issues](https://img.shields.io/github/issues/MattyOliveira/SimpleCallApi)
+[![GitHub version](https://badge.fury.io/gh/Naereen%2FStrapDown.js.svg)](https://github.com/MattyOliveira/SimpleCallApi.js)
+
+
+
+
 
 ### Version
 ##### Gradle
