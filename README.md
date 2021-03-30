@@ -52,13 +52,13 @@ class Exemple(val api: Api): SimpleRepository() {
 
 ##### SimpleViewModel
 ```kotlin
-class ExempleViewModel(private val useCase: ExempleUseCase): SimpleViewModel() {
+class ExempleViewModel(private val useCase: ExempleUseCase): SimpleViewModel<Type>() {
 
 	fun getExemple() {
 		viewModelScope.launch {
 			safeCall { useCase.getExemple() }
-				.onSuccess { it as yourType }
-				.onError { it as yourType }
+				.onSuccess { it }
+				.onError { it }
 	}
 }
 ```
