@@ -3,9 +3,9 @@ package com.example.callapi.base
 import androidx.lifecycle.ViewModel
 import com.example.callapi.ResultApi
 
-abstract class SimpleViewModel<T1> : ViewModel() {
+abstract class SimpleViewModel<Type> : ViewModel() {
 
-    private var onSuccess: ((T1) -> Unit?) = {}
+    private var onSuccess: (Type) -> Unit = {}
     private var onError: (() -> Unit?) = {}
 
     @Suppress("UNCHECKED_CAST")
@@ -13,12 +13,12 @@ abstract class SimpleViewModel<T1> : ViewModel() {
         call: suspend () -> ResultApi
     ) {
         when(val response = call.invoke()) {
-            is ResultApi.Success -> { onSuccess(response.data as T1) }
+            is ResultApi.Success -> { onSuccess(response.data as Type) }
             is ResultApi.Error -> { onError.let { onError.invoke() } }
         }
     }
 
-    fun <T> T.onSuccess(action: ((T1) -> Unit?)) {
+    fun <T> T.onSuccess(action: (value: Type) -> Unit) {
         onSuccess = action
     }
 

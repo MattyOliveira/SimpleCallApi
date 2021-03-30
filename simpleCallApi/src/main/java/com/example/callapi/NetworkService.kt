@@ -15,35 +15,21 @@ object NetworkService {
     inline fun <reified T> createClientByService(
         baseUrl: String = "",
         okHttpClient: OkHttpClient = OkHttpClient.Builder().build(),
-        moshiConverter: Boolean = false
-    ): T = Retrofit.Builder()
-        .baseUrl(baseUrl)
-        .client(okHttpClient)
-        .addConverterFactory(
+        moshiConverter: Boolean = false,
+        isRx: Boolean = false
+    ): T {
+        val client = Retrofit.Builder()
+            .baseUrl(baseUrl)
+            .client(okHttpClient)
             if (moshiConverter)
-                MoshiConverterFactory.create(moshiFactory())
+                client.addConverterFactory(MoshiConverterFactory.create(moshiFactory()))
             else
-                GsonConverterFactory.create(getDefaultGson())
-        )
-        .build()
-        .create(T::class.java)
+                client.addConverterFactory(GsonConverterFactory.create(getDefaultGson()))
 
-    inline fun <reified T> createClientByServiceRx(
-        baseUrl: String = "",
-        okHttpClient: OkHttpClient = OkHttpClient.Builder().build(),
-        moshiConverter: Boolean = false
-    ): T = Retrofit.Builder()
-        .baseUrl(baseUrl)
-        .client(okHttpClient)
-        .addConverterFactory(
-            if (moshiConverter)
-                MoshiConverterFactory.create(moshiFactory())
-            else
-                GsonConverterFactory.create(getDefaultGson()))
-        .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
-        .build()
-        .create(T::class.java)
+            if (isRx) client.addCallAdapterFactory(RxJava2CallAdapterFactory.create())
 
+        return client.build().create(T::class.java)
+    }
 
     fun moshiFactory(): Moshi {
         return Moshi.Builder()
