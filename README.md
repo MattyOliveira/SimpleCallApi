@@ -15,7 +15,7 @@ SimpleCallApi is a library to assist with API calls. The idea is that it would b
 ### Version
 ##### Gradle
 ```
-implementation 'com.github.mattyoliveira:simple-call-api:1.1.1'
+implementation 'com.github.mattyoliveira:simple-call-api:1.2.3'
 ```
 
 ##### Maven
@@ -52,13 +52,13 @@ class Exemple(val api: Api): SimpleRepository() {
 
 ##### SimpleViewModel
 ```kotlin
-class ExempleViewModel(private val useCase: ExempleUseCase): SimpleViewModel() {
+class ExempleViewModel(private val useCase: ExempleUseCase): SimpleViewModel<Type>() {
 
 	fun getExemple() {
 		viewModelScope.launch {
 			safeCall { useCase.getExemple() }
-				.onSuccess { it as yourType }
-				.onError { it as yourType }
+				.onSuccess { it }
+				.onError { it }
 	}
 }
 ```
