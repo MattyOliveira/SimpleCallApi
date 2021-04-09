@@ -1,4 +1,4 @@
-package com.example.callapi
+package com.example.callapi.error
 
 object ApiError {
     val message: String? = null

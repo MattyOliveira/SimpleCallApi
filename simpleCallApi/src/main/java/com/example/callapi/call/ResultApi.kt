@@ -1,4 +1,4 @@
-package com.example.callapi
+package com.example.callapi.call
 
 sealed class ResultApi {
     data class Success(val data: Any?): ResultApi()

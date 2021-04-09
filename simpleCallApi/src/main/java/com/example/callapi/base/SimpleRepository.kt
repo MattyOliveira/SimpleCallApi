@@ -1,6 +1,6 @@
 package com.example.callapi.base
 
-import com.example.callapi.ResultApi
+import com.example.callapi.call.ResultApi
 import com.example.callapi.utils.ErrorUtils
 import retrofit2.Response
 import java.lang.Exception

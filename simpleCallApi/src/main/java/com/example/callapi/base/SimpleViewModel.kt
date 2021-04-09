@@ -1,7 +1,7 @@
 package com.example.callapi.base
 
 import androidx.lifecycle.ViewModel
-import com.example.callapi.ResultApi
+import com.example.callapi.call.ResultApi
 
 abstract class SimpleViewModel<Type> : ViewModel() {
 

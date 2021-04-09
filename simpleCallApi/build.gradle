@@ -28,6 +28,9 @@ dependencies {
     api "com.squareup.retrofit2:converter-gson:$versions.retrofit_converter_gson"
     api "com.squareup.retrofit2:converter-moshi:$versions.retrofit_converter_moshi"
 
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.4.2"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.4.2"
+
     //RX
     implementation "com.squareup.retrofit2:adapter-rxjava2:$versions.rx_call_adapter"
 
@@ -39,7 +42,7 @@ dependencies {
 
 ext {
     PUBLISH_GROUP_ID = 'com.github.mattyoliveira'
-    PUBLISH_VERSION = '1.2.3'
+    PUBLISH_VERSION = '2.0.0'
     PUBLISH_ARTIFACT_ID = 'simple-call-api'
 }
 

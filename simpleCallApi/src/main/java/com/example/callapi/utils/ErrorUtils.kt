@@ -1,6 +1,6 @@
 package com.example.callapi.utils
 
-import com.example.callapi.ApiError
+import com.example.callapi.error.ApiError
 import com.example.callapi.NetworkService.createClientByService
 import okhttp3.ResponseBody
 import retrofit2.Converter
