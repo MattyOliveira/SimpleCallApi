@@ -34,7 +34,7 @@ implementation 'com.github.mattyoliveira:simple-call-api:1.2.3'
 ```kotlin
 interface Api {
     @GET("/api")
-    suspend fun getExemple(): Response<yourType>
+    suspend fun getExemple(): yourType
 }
 ```
 
@@ -45,20 +45,35 @@ createClientByService<Api>( baseUrl = "https://yourBase")
 
 ##### SimpleRespository
 ```kotlin
-class Exemple(val api: Api): SimpleRepository() {
-	suspend fun getExemple() = safeCallApi { api.getExemple() }
+class ExempleRepository(val api: Api) {
+	suspend fun getExemple() = api.getExemple()
+}
+```
+
+##### SimpleUseCase
+```kotlin
+class ExempleUseCase(private val repositori: MainRepository) : SimpleUseCase<Post, None>(){
+    override suspend fun run(params: None) = repositori.getExemple()
 }
 ```
 
 ##### SimpleViewModel
 ```kotlin
-class ExempleViewModel(private val useCase: ExempleUseCase): SimpleViewModel<Type>() {
+class ExempleViewModel(private val useCase: ExempleUseCase) {
 
 	fun getExemple() {
 		viewModelScope.launch {
-			safeCall { useCase.getExemple() }
-				.onSuccess { it }
-				.onError { it }
+		    useCase(scope = this)
+			.onStatusChange {
+			    when(it) {
+				AsyncStatus.DONE -> { //FinishOperation }
+				AsyncStatus.RUNNING -> { //RunningOperation }
+				AsyncStatus.ERROR -> { //ErrorOperation }
+			    }
+			}
+                	.onSuccess { it //return your type }
+                	.onFailure { it //return ErrorEntity  }
+        	}
 	}
 }
 ```
