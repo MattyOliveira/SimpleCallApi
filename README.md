@@ -15,7 +15,7 @@ SimpleCallApi is a library to assist with API calls. The idea is that it would b
 ### Version
 ##### Gradle
 ```
-implementation 'com.github.mattyoliveira:simple-call-api:1.2.3'
+implementation 'com.github.mattyoliveira:simple-call-api:2.0.0'
 ```
 
 ##### Maven
