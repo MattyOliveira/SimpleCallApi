@@ -4,7 +4,7 @@ import com.example.callapi.utils.AsyncStatus
 import com.example.callapi.error.ErrorEntity
 import com.example.callapi.error.ErrorHandler
 import kotlinx.coroutines.*
-import org.koin.core.KoinComponent
+import org.koin.core.component.KoinComponent
 
 class ResultAsync<T> private constructor(
     scope: CoroutineScope, val action: suspend () -> T
